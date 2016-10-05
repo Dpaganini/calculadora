@@ -100,46 +100,49 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic.c
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
+    // templateUrl: 'templates/menu.html',
+    templateUrl: 'templates/tabs.html',
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.imc', {
+    url: '/imc',
     views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
+      'tab-imc': {
+        templateUrl: 'templates/imc.html',
+        // controller: 'imc'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.iac', {
+      url: '/iac',
       views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
+        'tab-iac': {
+          templateUrl: 'templates/iac.html',
+        // controller: 'iac'
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.get', {
+      url: '/get',
       views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+        'tab-get': {
+          templateUrl: 'templates/get.html',
+          // controller: 'get'
         }
       }
     })
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('app.geb', {
+    url: '/geb',
     views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+      'tab-geb': {
+        templateUrl: 'templates/geb.html',
+        // controller: 'geb'
       }
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/imc');
 });
